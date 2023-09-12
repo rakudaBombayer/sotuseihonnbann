@@ -5,8 +5,6 @@ using UnityEngine;
 public class Cursor : MonoBehaviour
 {
     //TODO クリックしたオブジェクトにカーソルを移動させたい
-    
-    
 
     // ・カーソルを移動させたい
     public void SetPosition(Transform target)
@@ -15,8 +13,8 @@ public class Cursor : MonoBehaviour
     }
 
     // ・クリックしたオブジェクトを場所を取得したい
-    // クリック判定 =>Update関数の中でInput系を使う
-    //クリックしたオブジェクトを場所を取得したい => クリックしg田場所にRayを飛ばしてオブジェクトを取得する
+    //   クリック判定 => Update関数の中でInput系を使う
+    //   クリックしたオブジェクトを場所を取得したい => クリックした場所にRayを飛ばしてオブジェクトを取得する
 
     private void Update()
     {
@@ -25,5 +23,4 @@ public class Cursor : MonoBehaviour
             Debug.Log("左クリックしたよ");
         }
     }
-
 }

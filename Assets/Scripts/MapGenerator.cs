@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
-  [SerializeField] TileObj grassObjPrefab;
-  [SerializeField] TileObj forestObjPrefab;
-  [SerializeField] TileObj waterObjPrefab;
+  [SerializeField] TileObj grassPrefab;
+  [SerializeField] TileObj forestPrefab;
+  [SerializeField] TileObj waterPrefab;
   [SerializeField] Transform tileParent;
 
   const int WIDTH = 15;
@@ -30,15 +30,15 @@ public class MapGenerator : MonoBehaviour
             int rate = Random.Range(0, 100); // 0 -99までの数字がランダムで1つでる
             if(rate < WATER_RATE)
             {
-                Instantiate(waterObjPrefab, pos, Quaternion.identity, tileParent);
+                Instantiate(waterPrefab, pos, Quaternion.identity, tileParent);
             }           
             else if(rate < FOREST_RATE)
             {
-                Instantiate(forestObjPrefab, pos, Quaternion.identity, tileParent);
+                Instantiate(forestPrefab, pos, Quaternion.identity, tileParent);
             }           
             else 
             {
-                Instantiate(grassObjPrefab, pos, Quaternion.identity, tileParent);
+                Instantiate(grassPrefab, pos, Quaternion.identity, tileParent);
             }           
         }
     }
