@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 454071126342693960}
   - component: {fileID: 6583030606203100857}
   m_Layer: 0
-  m_Name: TileBasePrefab
-  m_TagString: Untagged
+  m_Name: Grass
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
