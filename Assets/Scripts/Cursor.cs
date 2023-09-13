@@ -20,8 +20,6 @@ public class Cursor : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("左クリックしたよ");
-            //raycastでなやんでいる。
             Vector2 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit2D = Physics2D.Raycast(
                 clickPosition,
@@ -30,6 +28,8 @@ public class Cursor : MonoBehaviour
             if (hit2D && hit2D.collider)
             {
                 SetPosition(hit2D.transform);
+                TileObj tileObj = hit2D.transform.GetComponent<TileObj>();
+                Debug.Log(tileObj.positionInt);
             }
         }
     }
