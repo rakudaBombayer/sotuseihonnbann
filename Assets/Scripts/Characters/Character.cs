@@ -13,6 +13,13 @@ public class Character : MonoBehaviour
     {
         transform.position = (Vector2)positionInt;   
     }
+
+    // キャラを移動
+    public void Move(Vector2Int pos) 
+    {
+        positionInt = pos;
+        transform.position = (Vector2)positionInt;
+    }
 }
 
 //選択タイルの取得
