@@ -5,6 +5,8 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     [SerializeField] Vector2Int positionInt;
+
+    public Vector2Int Position { get => positionInt; }
     
     // Start is called before the first frame update
     void Start()
