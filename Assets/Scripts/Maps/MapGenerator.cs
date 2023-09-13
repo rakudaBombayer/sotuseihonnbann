@@ -19,7 +19,8 @@ public class MapGenerator : MonoBehaviour
     Generate();
   }
 
-  void Generate()
+  // Maps生成
+  public void Generate()
   { 
     Vector2 offset = new Vector2(-WIDTH/2, -HEIGHT/2);
     for (int x = 0; x < WIDTH; x++)
