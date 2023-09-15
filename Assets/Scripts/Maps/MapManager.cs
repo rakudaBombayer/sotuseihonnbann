@@ -9,7 +9,9 @@ public class MapManager : MonoBehaviour
     [SerializeField] MapGenerator mapGenerator;
 
     Character selectedCharacter;
-    List<TileObj> tileObjs = new List<TileObj>();    
+    List<TileObj> tileObjs = new List<TileObj>();
+
+    List<TileObj> movableTiles = new List<TileObj>();   
     private void Start()
     {
         tileObjs = mapGenerator.Generate();
@@ -36,6 +38,7 @@ public class MapManager : MonoBehaviour
                     Debug.Log("いる");
                     // 選択キャラの保持
                     selectedCharacter = character;
+                    ResetMovablePanels();
                     //移動範囲を表示
                     ShowMovablePanels(selectedCharacter);
                 }
@@ -47,6 +50,7 @@ public class MapManager : MonoBehaviour
                     {
                         // selectedCharacterをtileObjまで移動させる
                         selectedCharacter.Move(tileObj.positionInt);
+                        ResetMovablePanels();
                         selectedCharacter = null;
                     }
                 }
@@ -59,19 +63,26 @@ public class MapManager : MonoBehaviour
     {
         // characterから上下左右のタイルを探す
         //・characterと同じ場所のタイル
-        List<TileObj> movableTiles = new List<TileObj>()
+        
         {   
-            tileObjs.Find(tile => tile.positionInt == character.Position),
-            tileObjs.Find(tile => tile.positionInt == character.Position+Vector2Int.up),
-            tileObjs.Find(tile => tile.positionInt == character.Position+Vector2Int.down),
-            tileObjs.Find(tile => tile.positionInt == character.Position+Vector2Int.left),
-            tileObjs.Find(tile => tile.positionInt == character.Position+Vector2Int.right),
+            movableTiles.Add(tileObjs.Find(tile => tile.positionInt == character.Position));         
+            movableTiles.Add(tileObjs.Find(tile => tile.positionInt == character.Position+Vector2Int.up));
+            movableTiles.Add(tileObjs.Find(tile => tile.positionInt == character.Position+Vector2Int.down));
+            movableTiles.Add(tileObjs.Find(tile => tile.positionInt == character.Position+Vector2Int.left));
+            movableTiles.Add(tileObjs.Find(tile => tile.positionInt == character.Position+Vector2Int.right));
         };
 
         foreach (var tile in movableTiles)
         {
             tile.ShowMovablePanel(true); 
         }
-
+    }
+    void ResetMovablePanels()
+    {
+        foreach (var tile in movableTiles)
+        {
+            tile.ShowMovablePanel(false);
+        }
+        movableTiles.Clear();
     }
 }
