@@ -9,9 +9,10 @@ public class MapManager : MonoBehaviour
     [SerializeField] MapGenerator mapGenerator;
 
     Character selectedCharacter;
+    List<TileObj> tileObjs = new List<TileObj>();    
     private void Start()
     {
-        mapGenerator.Generate();
+        tileObjs = mapGenerator.Generate();
     }
 
     private void Update()
@@ -35,6 +36,8 @@ public class MapManager : MonoBehaviour
                     Debug.Log("いる");
                     // 選択キャラの保持
                     selectedCharacter = character;
+                    //移動範囲を表示
+                    ShowMovablePanels(selectedCharacter);
                 }
                 else
                 {
@@ -49,5 +52,26 @@ public class MapManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    // TODO 移動範囲を表示する
+    void ShowMovablePanels(Character character)
+    {
+        // characterから上下左右のタイルを探す
+        //・characterと同じ場所のタイル
+        List<TileObj> movableTiles = new List<TileObj>()
+        {   
+            tileObjs.Find(tile => tile.positionInt == character.Position),
+            tileObjs.Find(tile => tile.positionInt == character.Position+Vector2Int.up),
+            tileObjs.Find(tile => tile.positionInt == character.Position+Vector2Int.down),
+            tileObjs.Find(tile => tile.positionInt == character.Position+Vector2Int.left),
+            tileObjs.Find(tile => tile.positionInt == character.Position+Vector2Int.right),
+        };
+
+        foreach (var tile in movableTiles)
+        {
+            tile.ShowMovablePanel(true); 
+        }
+
     }
 }

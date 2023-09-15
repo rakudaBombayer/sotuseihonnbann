@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf23759b7c974c5bb936d4e70474326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionInt: {x: 0, y: 0}
+  movablePanel: {fileID: 0}
 --- !u!61 &-4820309800396688691
 BoxCollider2D:
   m_ObjectHideFlags: 0

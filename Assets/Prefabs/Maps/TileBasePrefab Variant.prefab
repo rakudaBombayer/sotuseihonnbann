@@ -15,13 +15,49 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -140967625
       objectReference: {fileID: 0}
+    - target: {fileID: 2590731377146597003, guid: de76c871054634439bf95394d62bb3c6, type: 3}
+      propertyPath: m_Color.a
+      value: 0.3137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 2590731377146597003, guid: de76c871054634439bf95394d62bb3c6, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 2590731377146597003, guid: de76c871054634439bf95394d62bb3c6, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 2590731377146597003, guid: de76c871054634439bf95394d62bb3c6, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865175646101671461, guid: de76c871054634439bf95394d62bb3c6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3770150864603057727, guid: de76c871054634439bf95394d62bb3c6, type: 3}
       propertyPath: m_Name
       value: TileBasePrefab Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3770150864603057727, guid: de76c871054634439bf95394d62bb3c6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770150864603057727, guid: de76c871054634439bf95394d62bb3c6, type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6583030606203100857, guid: de76c871054634439bf95394d62bb3c6, type: 3}
+      propertyPath: movablePanel
+      value: 
+      objectReference: {fileID: 7727761146276760018}
+    - target: {fileID: 6760931426756104469, guid: de76c871054634439bf95394d62bb3c6, type: 3}
+      propertyPath: m_Name
+      value: MovablePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6760931426756104469, guid: de76c871054634439bf95394d62bb3c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8937250792979098835, guid: de76c871054634439bf95394d62bb3c6, type: 3}
       propertyPath: m_RootOrder
@@ -69,6 +105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de76c871054634439bf95394d62bb3c6, type: 3}
+--- !u!1 &7727761146276760018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2865175646101671461, guid: de76c871054634439bf95394d62bb3c6, type: 3}
+  m_PrefabInstance: {fileID: 5547770362832996343}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8696424475368212936 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3770150864603057727, guid: de76c871054634439bf95394d62bb3c6, type: 3}
